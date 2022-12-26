@@ -1,1 +1,1 @@
-# Basic-stopwatch
+I have tried to build a basic functioning stopwatch using different tech stacks.
