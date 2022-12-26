@@ -9,10 +9,12 @@ let interval = null;
 
 // Event listeners
 start_btn.addEventListener('click',start);
+stop_btn.addEventListener('click',stop);
+reset_btn.addEventListener('click',reset);
 
 // update the timer
 function timer(){
-    seconds++;
+    
 
     // Format out timer
      hrs = Math.floor(seconds / 3600);
@@ -23,6 +25,7 @@ function timer(){
     if(mins < 10) mins = '0' + mins;
     if(hrs  < 10) hrs = '0' + hrs;
     time_el.innerText = `${hrs}:${mins}:${secs}`;
+    seconds++;
 
 }
 timer();
@@ -33,5 +36,14 @@ function start(){
     }
     interval = setInterval(timer,1000);
 }   
+function stop(){
+    clearInterval(interval);
+    interval = null;
+}
 
+function reset(){
+    stop();
+    seconds = 0;
+    time_el.innerHTML = '00:00:00';
+}
 
