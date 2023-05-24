@@ -34,7 +34,7 @@ function start(){
     if(interval){
         return
     }
-    interval = setInterval(timer,1000);
+    interval = setInterval(timer,10);
 }   
 function stop(){
     clearInterval(interval);
